@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+:root{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+ 
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+    overflow-x: hidden;
+    transition: .2s;
+  }
+  .bg-image{
+    background-size: cover;
+    width: auto;
+    height: 30vh;
+  }
+#cart{
+  font-family: 'pacifico', cursive;
+}
+/*--navbar--*/
+.logo{
+    height: auto;
+    width: 4vw;
+    -webkit-animation: bounce 5s ease infinite;
+    animation: bounce 5s ease infinite;
+  }
+/*--logo animation--*/
+@keyframes bounce{
+  0%, 20%, 50%, 80%, 100%{
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+/*--shop style--*/
+.bg-dark.py-4{
+    transform: translateY(-65px);
+}
+.w-100.btn.btn-primary.btn-lg{
+  margin-bottom: 150px;
+}
+  /*--shop animation--*/
+  .hidden{
+    opacity: 0;
+    transition:  all 1s;
+  }
+  .show{
+    opacity: 1;
+  }
+
+ 
+.navbar-brand{
+  font-weight: 500;
+}
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+  
+  @media (max-width: 400px){
+    .logo{
+        height: auto;
+        width: 45px;
+    }
+  }
