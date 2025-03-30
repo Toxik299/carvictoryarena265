@@ -1,0 +1,132 @@
+/* Navbar Styles */
+.navbar-brand {
+    font-weight: bold;
+    font-family: montserrat;
+}
+
+.navbar li{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    width: 50px; /* Increase width */
+    height: 30px; /* Increase height */
+    cursor: pointer;
+    transition: transform 0.9s ease;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 30px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.navbar-nav {
+    display: flex; /* Initially hide navbar items */
+}
+
+.navbar-nav.show {
+    display: flex; /* Show navbar items when toggler is clicked */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.nav-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: scale(1.1); /* Zoom in */
+    color: #ffcc00; /* Change text color */
+}
+
+.nav-item:not(:hover) {
+    transition: transform 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+    transform: scale(1); /* Back to normal */
+    box-shadow: none; /* Remove glow */
+    color: #fff; /* Default color */
+}
+
+/* Active State for Navbar Links */
+.navbar-nav .nav-link.active {
+    color: #ffcc00 !important; /* Highlight color for active link */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for links */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Adjust font size on mobile */
+    }
+
+    .navbar-nav .nav-link i {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-nav .nav-link #fa {
+        display: none; /* Hide icons in larger screens */
+    }
+
+    /* Navbar items for wider screens */
+    .navbar-dark .navbar-nav .nav-link {
+        margin-right: 30px;
+        padding: 5px 0;
+        color: #FFFFFF;
+        font-size: 15px;
+        text-transform: uppercase;
+        outline: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+        color: var(--primary);
+    }
+}
+

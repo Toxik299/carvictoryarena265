@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Victory Arena</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="aos.css">
+    <link rel="stylesheet" href="css/stylecss">
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+<!-- header section -->
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-4">
+            <a class="navbar-brand fw-bolder fs-5" href="#!">CAR<span style="color: orangered" class="fs-4">VICTORY</span>ARENA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home-lg-alt" id="fa"></i>&nbsp;Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-store" id="fa"></i>&nbsp;Our Products</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown09">
+                            <li><a class="dropdown-item" href="products.html"><i class="fab fa-stack-overflow" id="fa"></i>&nbsp;Featured Products</a></li>
+                            <li><a class="dropdown-item" href="#special-offer"><i class="fa fa-star text-danger" id="fa"></i>&nbsp;Special Offers</a></li>
+                        </ul>
+                        </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="about.html"><i class="fas fa-info-circle" id="fa"></i>&nbsp;About Us</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-star" id="fa"></i>&nbsp;Special Offers</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#faq"><i class="fas fa-question-circle" id="fa"></i>&nbsp;FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-phone" id="fa"></i>&nbspContact Us</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart" id="fa"></i>&nbspCart & Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-balance-scale-left" id="fa"></i>&nbspPolicies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- header section ends -->
+<!-- main section -->
+<main>
+    <!-- Hero Section -->
+<section id="hero" class="bg-dark text-white text-center d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('images/hero/herobg.jpg') center/cover no-repeat;">
+    <div class="container d-flex flex-column justify-content-end" id="hero2" style="padding-bottom: 50px;"> <!-- Added justify-content-end and padding -->
+        <h1><span class="typed fw-bold display-4" data-typed-items="Drive Smooth., Stay Moving."></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></h1>
+        <p class="lead">With Precision Auto Parts!</p>
+
+        <form id="search-form" class="d-flex flex-column flex-md-row justify-content-center mt-4" onsubmit="searchParts(event)">
+            <input type="text" id="car-model" class="form-control mb-2 mb-md-0 me-md-2" placeholder="Enter Car Model" required>
+            <input type="text" id="spare-type" class="form-control mb-2 mb-md-0 me-md-2" placeholder="Enter Spare Type" required>
+            <button type="submit" class="btn btn-warning">Search</button>
+        </form>
+        <div id="search-results" class="container mt-4 d-flex flex-wrap justify-content-center"></div>
+    </div>
+</section>
+<!-- featured products -->
+<section id="featured-products" class="pt-5 fade-in" data-aos="fade-up">
+<div class="container">
+    <h2 class="text-center mb-4 text-dark fw-bold pb-5" id="featured" data-aos="fade-up">Popular Choices</h2>
+    <div class="row row-cols-1 row-cols-md-6 g-4"> <!-- Adjusted to show 2 cards per row on mobile screens -->
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100"> <!-- Added h-100 for uniform height -->
+                <img src="images/import/product categories/Brakes Pads/pads.JPG" class="card-img-top" alt="Brake Pads">
+                <div class="card-body">
+                    <h5 class="card-title">Brake Pads</h5>
+                    <p class="card-text">MK 17, 500.99</p>
+                    <button class="btn btn-dark" onclick="addToCart('Brake Pads,MK 17, 500.99')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100"> <!-- Added h-100 for uniform height -->
+                <img src="images/import/product categories/Filters/filter 2.JPG" alt="Oil Filter" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Filters</h5>
+                    <p class="card-text">MK 14, 700.99</p>
+                    <button class="btn btn-dark" onclick="addToCart('Oil Filters,MK 14, 700.99')"></i>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100"> <!-- Added h-100 for uniform height -->
+                <img src="images/import/product categories/Filters/filter 3.JPG" alt="Oil Filter" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Filters</h5>
+                    <p class="card-text">MK 14, 700.99</p>
+                    <button class="btn btn-dark" onclick="addToCart('Oil Filters,MK 14, 700.99')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100"> <!-- Added h-100 for uniform height -->
+                <img src="images/import/product categories/Shocks/shock 8.JPG" alt="Shock Absorber" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Shock Absorber</h5>
+                    <p class="card-text">MK 20, 000.99</p>
+                    <button class="btn btn-dark" onclick="addToCart('Shock Absorber,MK 20, 000.99')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100"> <!-- Added h-100 for uniform height -->
+                <img src="images/import/product categories/Shocks/shock 7.JPG" alt="Shock Absorber" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Shock Absorber</h5>
+                    <p class="card-text">MK 20, 000.99</p>
+                    <button class="btn btn-dark" onclick="addToCart('Shock Absorber,MK 20, 000.99')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- featured products ends -->
+<!-- Special Offers Section -->
+<section class="special-offer" data-aos="fade-left" id="special-offer">
+    <div class="offer-content" data-aos="fade-right" data-aos-duration="1500">
+        <h2>SALES</h2>
+        <h1><span>30</span>%</h1>
+        <p>OFF</p>
+        <p class="subtext">WE LOVE TO WARM YOU</p>
+        <a href="#" class="shop-btn">SHOP NOW</a>
+    </div>
+    <div class="offer-image" data-aos="fade-left">
+        <img src="images/SpecialOffer/8332957.png" alt="Special Offer">
+    </div>
+</section>
+<!-- Why Choose Us Section -->
+<section id="why-us" class="py-5 bg-light text-center fade-in" data-aos="fade-up">
+    <div class="container">
+        <!-- Heading -->
+        <h2 class="text-success fw-bold mb-4" data-aos="fade-up">Why Choose Us?</h2>
+
+        <!-- Icons and Text -->
+        <div class="row justify-content-center">
+            <!-- Fast Delivery Icon -->
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box p-4 text-center">
+                    <i class="fas fa-truck-fast fa-3x text-secondary mb-3"></i>
+                    <h5 class="fw-medium">Fast Delivery</h5>
+                    <p>Get your products delivered quickly and safely to your doorstep.</p>
+                </div>
+            </div>
+            
+            <!-- Free Delivery Icon -->
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box p-4 text-center">
+                    <i class="fas fa-truck fa-3x text-secondary mb-3"></i>
+                    <h5 class="fw-medium">Free Delivery</h5>
+                    <p>Enjoy free shipping on all orders, no hidden charges.</p>
+                </div>
+            </div>
+            
+            <!-- Best Quality Icon -->
+            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box p-4 text-center">
+                    <i class="fas fa-star fa-3x text-secondary mb-3"></i>
+                    <h5 class="fw-medium">Best Quality</h5>
+                    <p>We offer high-quality car parts for the best driving experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- client reviews section starts -->
+<section id="testimonials" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="text-dark fw-bold mb-4">What Our Customers Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <blockquote class="blockquote">
+                    <p>"Great experience, fast delivery, and high-quality parts!"</p>
+                    <footer class="blockquote-footer">Miranda </footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 mb-4">
+                <blockquote class="blockquote">
+                    <p>"The customer service was excellent, and I found everything I needed!"</p>
+                    <footer class="blockquote-footer">John Banda</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 mb-4">
+                <blockquote class="blockquote">
+                    <p>"Highly recommend! Best prices and amazing service."</p>
+                    <footer class="blockquote-footer">Mrs Buyer</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- client reviews section ends -->
+<!-- trusted brands section starts -->
+<section id="partners" class="py-5">
+    <div class="container">
+        <h2 class="text-center text-dark mb-4">Our Trusted Brands</h2>
+        <div class="row justify-content-center" id="icons">
+            <div class="col-md-3">
+                <img src="images/brands/1985-Mitsubishi-Logo-SVG-Vector.svg" alt="Brand 1" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/1989-Lexus-Logo-SVG-Vector.svg" alt="Brand 2" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/1991-Isuzu-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2000-Honda-Logo-SVG-Vector.svg" alt="Brand 4" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2013-Chevrolet-Logo-SVG-Vector.svg" alt="Brand 5" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2015-Mercedes-Benz-Logo-SVG-Vector.svg" alt="Brand 6" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2016-Audi-Sport-Logo-SVG-Vector.svg" alt="Brand 7" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2018-Mazda-Logo-SVG-Vector.svg" alt="Brand 8" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2019-Volkswagen-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2020-BMW-M-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2020-Nissan-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2021-Land-Rover-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/2023-Hyundai-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/Ford-1965-to-Today-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/Mercedes-AMG-Present-Logo-SVG-Vector.svg" alt="Brand 3" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <img src="images/brands/Toyota-2020-Logo-Vector-01.svg" alt="Brand 3" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- trusted brands section ends -->
+<section id="cta" class="py-5 bg-warning text-white text-center">
+    <div class="container">
+        <h2 class="fw-bold">Get Exclusive Offers!</h2>
+        <p class="lead">Sign up for our newsletter and get 10% off on your next purchase.</p>
+        <form id="cta-form" class="d-flex justify-content-center">
+            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<section id="faq" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-dark fw-semibold fs-4 mb-4 text-center">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the return policy?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our return policy allows you to return products within 30 days of purchase for a full refund or exchange.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How long does delivery take?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Delivery typically depends on your location.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Scroll to Top Button -->
+<button id="backToTopBtn" onclick="scrollToTop()" class="btn btn-warning">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@carvictoryarena.com</p>
+                <p>Phone: +265(0) 992 11 47 16</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#faq" class="text-white">FAQs</a></li>
+                    <li><a href="#" class="text-white">Terms of Service</a></li>
+                    <li><a href="#" class="text-white">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</main>
+<!-- main section ends -->
+<!-- scripts -->
+<script src="js/all.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/conflict-detection.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/search bar js.js"></script>
+<script src="js/animation.js"></script>
+<script>
+    const hamMenu = document.querySelector(".ham-menu");
+
+    const offScreenMenu = document.querySelector(".off-screen-menu");
+
+    hamMenu.addEventListener("click", () => {
+    hamMenu.classList.toggle("active");
+    offScreenMenu.classList.toggle("active");
+});
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+var form = document.querySelector('#hero-container form');
+if (form) {
+    form.classList.add('show'); // Trigger the fade-in animation
+}
+});
+
+</script>
+<!-- featured section add to cart button -->
+<script>
+function addToCart(product) {
+console.log(`${product} has been added to the cart.`);
+    // You can add further code here to actually manage the cart, for example, using localStorage.
+}
+
+</script>
+<!-- back to top button script -->
+<script>
+    // Show or hide the Scroll to Top button based on scroll position
+    window.onscroll = function () {
+        const button = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            button.classList.add("show");
+        } else {
+            button.classList.remove("show");
+        }
+    };
+
+    // Smooth scroll to top function
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+</script>
+
+<!-- typewriter -->
+<script src="js/typed.umd.js"></script>
+<script>
+      const selectTyped = document.querySelector('.typed');
+  if (selectTyped && typeof Typed !== 'undefined') {
+    let typed_strings = selectTyped.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
+</script>
+<script>
+    document.getElementById("copyCoupon").addEventListener("click", function() {
+    navigator.clipboard.writeText("SAVE10");
+    alert("Coupon Code Copied: SAVE10");
+});
+</script>
+<!-- AOS -->
+   <!-- AOS Library JS -->
+   <script src="/js/aos.js"></script>
+
+   <!-- Custom JS to initialize AOS and handle Preloader -->
+   <script>
+     AOS.init();
+ 
+     // Preloader Fadeout
+     window.addEventListener('load', function () {
+       const preloader = document.getElementById('preloader');
+       if (preloader) {
+           preloader.style.display = 'none';
+       }
+     });
+ 
+     // Scroll to Top Button
+     const backToTopBtn = document.getElementById("backToTopBtn");
+ 
+     window.onscroll = function () {
+       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+         backToTopBtn.style.display = "block";
+       } else {
+         backToTopBtn.style.display = "none";
+       }
+     };
+ 
+     backToTopBtn.addEventListener("click", function () {
+       window.scrollTo({ top: 0, behavior: "smooth" });
+     });
+   </script>
+   <script src="js/scroll-effects.js"></script>
+</body>
+</html>

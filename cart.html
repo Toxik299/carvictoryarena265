@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart & Checkout</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- header section -->
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-4">
+          <a class="navbar-brand fw-bolder fs-5" href="#!">CAR<span style="color: orangered" class="fs-4">VICTORY</span>ARENA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <div class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home-lg-alt" id="fa"></i>&nbsp;Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-store" id="fa"></i>&nbsp;Our Products</a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdown09">
+                          <li><a class="dropdown-item" href="products.html"><i class="fab fa-stack-overflow" id="fa"></i>&nbsp;Featured Products</a></li>
+                          <li><a class="dropdown-item" href="#special-offer"><i class="fa fa-star text-danger" id="fa"></i>&nbsp;Special Offers</a></li>
+                      </ul>
+                      </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="about.html"><i class="fas fa-info-circle" id="fa"></i>&nbsp;About Us</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa fa-star" id="fa"></i>&nbsp;Special Offers</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#faq"><i class="fas fa-question-circle" id="fa"></i>&nbsp;FAQs</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-phone" id="fa"></i>&nbspContact Us</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart" id="fa"></i>&nbspCart & Checkout</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-balance-scale-left" id="fa"></i>&nbspPolicies</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+<!-- cart section -->
+<body>
+    <div class="cart-container">
+        <div class="cart-header">
+          <h1>Your Cart</h1>
+        </div>
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items will go here -->
+        </div>
+        <div class="cart-summary">
+          <div class="cart-total">
+            <p>Total: $<span id="total-price">0.00</span></p>
+          </div>
+          <div class="cart-actions">
+            <button class="button-back" onclick="window.location.href='index.html';">Back to Shop</button>
+            <button class="button-checkout" onclick="checkout()">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- script -->
+<script src="js/all.js"></script>
+<script src="js/conflict-detection.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/animation.js"></script>
+<script>
+    // JavaScript for cart functionality
+
+let cartItems = [
+  {
+    id: 1,
+    name: "Brake Pads",
+    price: 30.00,
+    image: "images/import/product categories/Brakes Pads/pads.JPG",
+    quantity: 1
+  },
+  {
+    id: 2,
+    name: "Oil Filter",
+    price: 15.00,
+    image: "images/import/product categories/Filters/filter 4.JPG",
+    quantity: 1
+  }
+];
+
+function renderCart() {
+  const cartContainer = document.getElementById('cart-items');
+  cartContainer.innerHTML = '';
+
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.price * item.quantity;
+
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('cart-item');
+
+    itemElement.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-item-details">
+        <h3>${item.name}</h3>
+        <p>Price: $${item.price.toFixed(2)}</p>
+        <div class="cart-item-quantity">
+          <button onclick="updateQuantity(${item.id}, -1)">-</button>
+          <p>Quantity: ${item.quantity}</p>
+          <button onclick="updateQuantity(${item.id}, 1)">+</button>
+        </div>
+      </div>
+      <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+      <button class="cart-item-remove" onclick="removeItem(${item.id})">Remove</button>
+    `;
+
+    cartContainer.appendChild(itemElement);
+  });
+
+  document.getElementById('total-price').innerText = total.toFixed(2);
+}
+
+function updateQuantity(itemId, change) {
+  const item = cartItems.find(item => item.id === itemId);
+  if (item) {
+    item.quantity = Math.max(1, item.quantity + change); // Ensure quantity doesn't go below 1
+    renderCart();
+  }
+}
+
+function removeItem(itemId) {
+  cartItems = cartItems.filter(item => item.id !== itemId);
+  renderCart();
+}
+
+function checkout() {
+  alert('Proceeding to Checkout...');
+  // Implement checkout functionality
+}
+
+renderCart();
+
+</script>
+</body>
+</html>
